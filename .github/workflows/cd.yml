@@ -33,3 +33,8 @@ jobs:
       - uses: pypa/gh-action-pypi-publish@release/v1
         with:
           repository-url: https://test.pypi.org/legacy/
+  
+  third-one:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hi
