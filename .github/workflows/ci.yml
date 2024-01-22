@@ -7,6 +7,7 @@ on:
       - main 
       - other-branch
   workflow_dispatch:
+          
 
 jobs:
   test:
@@ -46,4 +47,10 @@ jobs:
         id: step-with-output
         run: echo "some-variable=something" >> $GITHUB_OUTPUT
       - run: echo "${{ steps.step-with-output.outputs.some-variable }}"
-        
+  
+  power-thru:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - run: exit 1
+      - run: echo $?
