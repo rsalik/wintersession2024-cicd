@@ -18,7 +18,7 @@ jobs:
       - name: Get Markdown Slides
         run: "python -m pip install git+https://gitlab.com/da_doomer/markdown-slides.git"
       - name: Create Slides
-        run: mdslides --output_dir dir slides.md
+        run: mdslides --output_dir dist slides.md
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with: 
